@@ -27,7 +27,7 @@ public class CustomerGraphQlController {
 
     @QueryMapping
     public Customer customerById(@Argument Long id) {
-        return customerRepo.findById(id).get();
+        return customerRepo.findById(id).orElseThrow(() -> new RuntimeException("Customer not found with id : " + id));
     }
 
     @MutationMapping
