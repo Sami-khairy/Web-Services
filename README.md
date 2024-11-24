@@ -23,3 +23,15 @@ class de configuration pour publier le web service
 http://localhost:8082/services/CustomerService?wsdl pour la documentation XML
 
 soapUi pour tester
+
+
+creation de proto file + compilation proto file
+
+la compilation ce fait par le plugin ajouter qui vas chercher depuis <include>src/main/resources</include>
+puis mettre le resultat du compillation dans <outputDirectory>src/main/java</outputDirectory>
+pour cela (compilation) mvn lifecycle validate et package et clean
+
+pour grpc on a besoin d'un serveur grpc , pour cela on a ajouter une dependace devh qui nous permet d'ajouter
+une annotation pour lancer le serveur grpc @GrpcService
+
+pour tester grpc , en peut utiliser BlameRpc
